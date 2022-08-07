@@ -1,54 +1,90 @@
+.loginPageContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .loginInput {
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
-    padding: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    /*padding: 300px;*/
 }
 .login {
     text-align: center;
 }
-.username {
-    width: 300px;
+.loginUsername {
+    width: 100%;
     padding: 12px 20px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
     border: 2px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
-.username:focus {
+.loginUsername:focus {
     background-color: lightgray;
 }
-.password {
-    width: 300px;
+.loginPassword {
+    width: 100%;
     padding: 12px 20px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
     border: 2px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
-.password:focus {
+.loginPassword:focus {
     background-color: lightgrey;
 }
-.submit {
+.loginSubmitDiv {
+    /*margin: 0 auto;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*padding: 12px 20px;*/
+    width: 100%;
+}
+.loginSubmit {
     background-color: green;
-    width: 100px;
     padding: 12px 20px;
     margin-right: auto;
     margin-left: auto;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 5px;
     border: 2px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
     color: white;
-    text-align: center;
+    width: 100%;
 
+}
+.loginShowPassword {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    /*padding: 12px 20px;*/
+    width: 100%;
+    text-align: left;
+}
+.loginCheckbox {
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border: 2px #ddd solid;
+}
+.loginP {
+    font-size: 10px;
+    font-weight: normal;
+
+}
+.loginSignUp {
+    display: flex;
+    flex-direction: row;
+}
+.loginP2 {
 }

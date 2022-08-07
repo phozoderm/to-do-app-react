@@ -1,0 +1,113 @@
+.registerContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registerInput {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.registerSignUp{
+    text-align: center;
+}
+.registerName {
+    width: 100%;
+    padding: 12px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.registerName:focus{
+    background-color: lightgray;
+}
+.registerSurname {
+    width: 100%;
+    padding: 12px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.registerSurname:focus{
+    background-color: lightgray;
+}
+.registerUsername {
+    width: 100%;
+    padding: 12px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.registerUsername:focus {
+    background-color: lightgray;
+}
+.registerPassword {
+    width: 100%;
+    padding: 12px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.registerPassword:focus {
+    background-color: lightgray;
+}
+.registerPasswordConfirm {
+    width: 100%;
+    padding: 12px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.registerPasswordConfirm:focus {
+    background-color: lightgray;
+}
+.registerShowPassword {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    /*padding: 12px 20px;*/
+    width: 100%;
+    text-align: left;
+}
+.registerCheckbox {
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border: 2px #ddd solid;
+}
+.registerP2 {
+    font-size: 10px;
+    font-weight: normal;
+}
+.registerSignUpDiv {
+    width: 100%;
+}
+.registerSignUpButton {
+    background-color: green;
+    padding: 12px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: white;
+    width: 100%;
+}

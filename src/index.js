@@ -6,16 +6,16 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import { LoginPage} from "./pages/LoginPage";
+import {LoginPage} from "./pages/LoginPage";
+import {RegisterPage} from "./pages/RegisterPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
         <Routes>
-            <Route path='/' element={<App/>}>
-
-            </Route>
+            <Route path='/' element={<App/>}/>
             <Route path='/login' element={<LoginPage/>}/>
+            <Route path='register' element={<RegisterPage/>}/>
         </Routes>
     </BrowserRouter>
 );
