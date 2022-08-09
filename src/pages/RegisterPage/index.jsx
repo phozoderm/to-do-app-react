@@ -8,15 +8,27 @@ export function RegisterPage() {
     const [surname, setSurname] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [passwordConfirm, setPasswordConfirm] = useState('')
     const [passwordType, setPasswordType] = useState('password')
-    const [passwordConfirm, setPasswordConfirm] = useState('password')
+
 
     function showHidePassword() {
         setPasswordType(passwordType === 'password' ? 'text' : 'password')
     }
 
+    function passwordMatch(e) {
+        e.preventDefault()
+        if (password !== passwordConfirm) {
+            alert(
+                'Password do not match! Please retype.'
+            )
+        } else {
+            console.log(`Hello ${username} ${password}!`)
+        }
+    }
+
     return (
-        <div className={'registerContainer'}>
+        <form className={'registerContainer'} onSubmit={passwordMatch}>
             <div className={'registerInput'}>
                 <h1 className={'registerSignUp'}>SIGN UP</h1>
                 <input className={'registerName'} name={'name'} value={name}
@@ -28,7 +40,8 @@ export function RegisterPage() {
                        onChange={event => setUsername(event.target.value)} placeholder={'Username'}/>
                 <input type={passwordType} className={'registerPassword'} name={'password'} value={password}
                        onChange={event => setPassword(event.target.value)} placeholder={'Password'}/>
-                <input type={passwordType} className={'registerPasswordConfirm'} name={'passwordConfirm'} value={passwordConfirm}
+                <input type={passwordType} className={'registerPasswordConfirm'} name={'passwordConfirm'}
+                       value={passwordConfirm}
                        onChange={event => setPasswordConfirm(event.target.value)} placeholder={'Password Confirm'}/>
                 <div className={'registerShowPassword'}>
                     <input className={'registerCheckbox'} type="checkbox" onClick={showHidePassword}/>
@@ -36,15 +49,16 @@ export function RegisterPage() {
                 </div>
                 <div className={'registerSignUpDiv'}>
                     <button className={'registerSignUpButton'}
-                            onClick={() => console.log(`Hello ${username} ${password}!`)}>Sign in
+                            type='submit' >Sign in
                     </button>
                 </div>
                 <div className={'registerSignUpLink'}>
                     <p>
-                     Already have an account? <Link to="/login">Sign In!</Link>
+                        Already have an account? <Link to="/login">Sign In!</Link>
                     </p>
                 </div>
             </div>
-        </div>
+
+        </form>
     )
 }

@@ -11,9 +11,13 @@ export function LoginPage() {
     function showHidePassword() {
         setPasswordType(passwordType === 'password' ? 'text' : 'password')
     }
+    function consLog(e) {
+        e.preventDefault()
+        console.log(`Hello ${username} ${password}!`)
+    }
 
     return (
-        <div className='loginPageContainer'>
+        <form className='loginPageContainer' onSubmit={consLog}>
             <div className={'loginInput'}>
                 <h1 className={'login'}>
                     LOGIN
@@ -27,7 +31,7 @@ export function LoginPage() {
                     <p className={'loginP'}>Show Password</p>
                 </div>
                 <div className={'loginSubmitDiv'}>
-                    <button className={'loginSubmit'} onClick={() => console.log(`Hello ${username} ${password}!`)}>Sign in
+                    <button type='submit' className={'loginSubmit'}>Sign in
                     </button>
                 </div>
                 <div className={'loginSignUp'}>
@@ -36,7 +40,7 @@ export function LoginPage() {
                     </p>
                 </div>
             </div>
-        </div>
+        </form>
 
     )
 
