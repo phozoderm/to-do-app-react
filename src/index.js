@@ -9,9 +9,12 @@ import {
 import {LoginPage} from "./pages/LoginPage";
 import {RegisterPage} from "./pages/RegisterPage";
 import {ToDoListPage} from "./pages/ToDoListPage";
+import {ToastContainer} from "react-toastify";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    <>
+    <ToastContainer />
     <BrowserRouter>
         <Routes>
             <Route path='/' element={<App/>}/>
@@ -20,6 +23,7 @@ root.render(
             <Route path='/to-do-list' element={<ToDoListPage/>}/>
         </Routes>
     </BrowserRouter>
+    </>
 );
 
 // If you want to start measuring performance in your app, pass a function

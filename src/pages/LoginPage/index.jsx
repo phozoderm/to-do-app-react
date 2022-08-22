@@ -2,6 +2,8 @@ import {useState} from "react";
 
 import './index.css'
 import {Link, useNavigate} from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 /**
  * fetch()
@@ -39,19 +41,22 @@ export function LoginPage() {
                 if (res.ok) {
                     navigate('/to-do-list', {replace:true})
                 } else {
-                    // todo yaaap bi seyler
-                    console.log('Login failed.')
+                    toast('Username or password is not correct.')
                 }
             })
             .catch(() => {
-                // todo yaaaap
-                console.log('Login failed.')
+                toast('Something went wrong, please try again later.')
             })
     }
 
     function consLog(e) {
         e.preventDefault()
-        callLoginAPI()
+        if (username.length === 0 || password.length === 0) {
+            toast('Username or password cannot be empty.')
+        }
+        else {
+            callLoginAPI()
+        }
     }
 
     return (
