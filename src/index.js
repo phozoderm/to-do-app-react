@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import {LoginPage} from "./pages/LoginPage";
 import {RegisterPage} from "./pages/RegisterPage";
+import {ToDoListPage} from "./pages/ToDoListPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
             <Route path='/' element={<App/>}/>
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='register' element={<RegisterPage/>}/>
+            <Route path='/to-do-list' element={<ToDoListPage/>}/>
         </Routes>
     </BrowserRouter>
 );

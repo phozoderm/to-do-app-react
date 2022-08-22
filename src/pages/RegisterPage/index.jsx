@@ -2,6 +2,16 @@ import {useState} from "react";
 import './index.css'
 import {Link} from "react-router-dom";
 
+/**
+ * fetch()
+ * POST /user
+ * {
+ *     "username": "",
+ *     "password": "",
+ *     "nameSurname": ""
+ * }
+ * header -> "content-type" : "application/json"
+ */
 
 export function RegisterPage() {
     const [name, setName] = useState('')
@@ -11,6 +21,33 @@ export function RegisterPage() {
     const [passwordConfirm, setPasswordConfirm] = useState('')
     const [passwordType, setPasswordType] = useState('password')
 
+    function callRegisterAPI(){
+        fetch('http://localhost:1234/user', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: username,
+                password: password,
+                nameSurname: name + surname,
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then((res) => {
+                // todo yaaap bi seyler
+                if(res.ok) {
+                    console.log('Registration completed.')
+                }
+                else {
+                    console.log('Registration failed.')
+                }
+            })
+            .catch(() => {
+                // todo yaaaap
+                console.log('Registration failed.')
+            })
+
+    }
 
     function showHidePassword() {
         setPasswordType(passwordType === 'password' ? 'text' : 'password')
@@ -23,7 +60,7 @@ export function RegisterPage() {
                 'Password do not match! Please retype.'
             )
         } else {
-            console.log(`Hello ${username} ${password}!`)
+            callRegisterAPI()
         }
     }
 

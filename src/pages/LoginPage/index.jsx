@@ -1,19 +1,57 @@
 import {useState} from "react";
 
 import './index.css'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+
+/**
+ * fetch()
+ * POST /session
+ * {
+ *     "username": "",
+ *     "password": ""
+ * }
+ * header -> "content-type" : "application/json"
+ */
 
 export function LoginPage() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [passwordType, setPasswordType] = useState('password')
+    let navigate = useNavigate()
 
     function showHidePassword() {
         setPasswordType(passwordType === 'password' ? 'text' : 'password')
     }
+
+    function callLoginAPI() {
+        fetch('http://localhost:1234/session', {
+                method: 'POST',
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                }),
+                headers: {
+                    'content-type': 'application/json'
+                }
+            }
+        )
+            .then((res) => {
+                if (res.ok) {
+                    navigate('/to-do-list', {replace:true})
+                } else {
+                    // todo yaaap bi seyler
+                    console.log('Login failed.')
+                }
+            })
+            .catch(() => {
+                // todo yaaaap
+                console.log('Login failed.')
+            })
+    }
+
     function consLog(e) {
         e.preventDefault()
-        console.log(`Hello ${username} ${password}!`)
+        callLoginAPI()
     }
 
     return (
